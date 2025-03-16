@@ -48,5 +48,11 @@
     <string name="abrir_menu">Abrir menú</string>
     <string name="cerrar_menu">Cerrar menú</string>
     <string name="modo_oscuro">Modo oscuro</string>
+    <string name="archivo_guardado">Archivo guardado correctamente</string>
+    <string name="error_guardar_archivo">Hubo un error al guardar el archivo</string>
+    <string name="latitud_hint">Latitud</string>
+    <string name="longitud_hint">Longitud</string>
+    <string name="error_lat_lon_invalidas">Comprueba la longitud y latitud sean correctos</string>
+    <string name="error_campos_incompletos">Completa todos los campos</string>
 
 </resources>
