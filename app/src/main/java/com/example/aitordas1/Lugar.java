@@ -7,7 +7,7 @@ public class Lugar {
     private double latitud;
     private double longitud;
 
-    // Constructor completo
+    // Constructor 
     public Lugar(int id, String nombre, String descripcion, double latitud, double longitud) {
         this.id = id;
         this.nombre = nombre;
@@ -16,7 +16,7 @@ public class Lugar {
         this.longitud = longitud;
     }
 
-    // Getters y setters nuevos
+    // Getters y setters 
     public double getLatitud() { return latitud; }
     public void setLatitud(double latitud) { this.latitud = latitud; }
     public double getLongitud() { return longitud; }
