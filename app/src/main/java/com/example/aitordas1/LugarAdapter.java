@@ -53,13 +53,13 @@ public class LugarAdapter extends RecyclerView.Adapter<LugarAdapter.LugarViewHol
             Intent intent = new Intent(v.getContext(), DetalleLugarActivity.class);
             intent.putExtra("nombre", lugar.getNombre());
             intent.putExtra("descripcion", lugar.getDescripcion());
-            intent.putExtra("latitud", lugar.getLatitud()); // Añadido
-            intent.putExtra("longitud", lugar.getLongitud()); // Añadido
+            intent.putExtra("latitud", lugar.getLatitud()); 
+            intent.putExtra("longitud", lugar.getLongitud()); 
             v.getContext().startActivity(intent);
         });
 
 
-        // Pulsación larga para eliminar (opcional)
+        // Pulsación larga para eliminar 
         holder.itemView.setOnLongClickListener(v -> {
             mostrarDialogoEliminar(v.getContext(), lugar, position);
             return true;
