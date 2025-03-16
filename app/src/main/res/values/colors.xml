@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Colores principales -->
+    <color name="colorPrimary">#118EF2</color>
+    <color name="colorPrimaryVariant">#03A9F4</color>
+    <color name="colorSecondary">#03DAC5</color>
+
+    <!-- Fondos y textos -->
+    <color name="colorBackground">#F5F5F5</color>
+    <color name="colorSurface">#FFFFFF</color>
+    <color name="colorTextPrimary">#212121</color>
+    <color name="colorTextSecondary">#757575</color>
+
+    <!-- Colores de botones -->
+    <color name="buttonColor">#FF5722</color>
+    <color name="buttonTextColor">#FFFFFF</color>
+    <color name="toolbarColor">#0E91FA</color> <!-- Puedes cambiar el color -->
+
+</resources>

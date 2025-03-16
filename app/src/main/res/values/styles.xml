@@ -1,0 +1,28 @@
+<resources>
+    <!-- Estilo para botones redondeados -->
+    <style name="CustomButton" parent="Widget.Material3.Button">
+        <item name="android:backgroundTint">@color/toolbarColor</item>
+        <item name="android:textColor">@color/buttonTextColor</item>
+        <item name="android:elevation">4dp</item>
+        <item name="shapeAppearance">@style/RoundedCorners</item>
+    </style>
+
+    <!-- Estilo para textos grandes -->
+    <style name="CustomTextTitle">
+        <item name="android:textSize">22sp</item>
+        <item name="android:textColor">@color/colorTextPrimary</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <!-- Esquinas redondeadas -->
+    <style name="RoundedCorners">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">16dp</item>
+    </style>
+
+    <style name="CustomTextDescription">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">?attr/colorOnSurface</item>
+    </style>
+
+</resources>

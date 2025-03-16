@@ -1,0 +1,53 @@
+<resources>
+    <string name="app_name">SkyVisit</string>
+    <string name="nombre_lugar">Place Name</string>
+    <string name="descripcion_lugar">Description</string>
+    <string name="eliminar_lugar">Delete place</string>
+    <string name="editar_lugar">Edit place</string>
+    <string name="guardar">Save</string>
+    <string name="cancelar">Cancel</string>
+    <string name="agregar_lugar">Add Place</string>
+    <string name="confirmar_eliminar">Are you sure you want to delete "%1$s"?</string>
+    <string name="seleccionar_idioma">Select Language</string>
+    <string name="idioma_es">Spanish</string>
+    <string name="idioma_en">English</string>
+    <string name="agregar_Lugar">Add Place</string>
+    <string name="nuevo_lugar">New Place</string>
+    <string name="se_ha_agregado">Added: </string>
+    <string name="abrir_app">Open the app for more details</string>
+    <string name="app_iniciada_correctamente">The app has started successfully</string>
+    <string name="idioma_cambiado">The language has been changed successfully</string>
+    <string name="text_nombre_lugar">Place Name</string>
+    <string name="text_descripcion_lugar">Place Description</string>
+    <string name="text_distancia">Distance: --</string>
+    <string name="mapa_descripcion">Map showing the location of the mapr</string>
+    <string name="abrir_mapa">Open in Google Maps</string>
+    <string name="compartir_ubicacion">Share Location</string>
+    <string name="ubicacion_no_disponible">Location not available</string>
+    <string name="google_maps_no_instalado">Google Maps is not installed</string>
+    <string name="compartir_mensaje">Check out this place: %1$s\nLocation: %2$s</string>
+    <string name="compartir_con">Share location with</string>
+    <string name="error_ubicacion_no_disponible">Error: location is not available</string>
+    <!-- Dialogs -->
+    <string name="dialog_editar_titulo">Edit Place</string>
+    <string name="dialog_editar_mensaje">Enter the new name and description for "%1$s".</string>
+    <string name="dialog_eliminar_titulo">Delete Place</string>
+    <string name="dialog_eliminar_mensaje">Are you sure you want to delete "%1$s"? This action cannot be undone.</string>
+    <string name="error_api_geocoding">Error in Geocoding API</string>
+    <string name="mensaje_error_api">Could not retrieve location coordinates. Check your internet connection or try again later.</string>
+    <string name="error_nombre_lugar_invalido">Error: Invalid place name</string>
+    <string name="error_conexion">Could not connect to the internet. Check your connection and try again.</string>
+    <string name="error_ubicacion_no_encontrada">No coordinates found for "%1$s"</string>
+    <string name="error_codigo">Error code: </string>
+    <string name="acerca_de">Info about de app</string>
+    <string name="mensaje_acerca_de">Welcome to the app where you will be able to explore the different landmarks and share them with your friends.</string>
+    <string name="exportar_datos">Export Places</string>
+    <string name="exportacion_exitosa">Data exported in: </string>
+    <string name="error_exportar">Error during the exportation of the data</string>
+    <string name="menu_inicio">Home</string>
+    <string name="abrir_menu">Open menu</string>
+    <string name="cerrar_menu">Close menu</string>
+    <string name="modo_oscuro">Dark Mode</string>
+
+
+</resources>

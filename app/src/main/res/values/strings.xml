@@ -1,0 +1,52 @@
+<resources>
+    <string name="app_name">SkyVisit</string>
+    <string name="nombre_lugar">Nombre del Lugar</string>
+    <string name="descripcion_lugar">Descripción</string>
+    <string name="eliminar_lugar">Eliminar lugar</string>
+    <string name="editar_lugar">Editar lugar</string>
+    <string name="guardar">Guardar</string>
+    <string name="cancelar">Cancelar</string>
+    <string name="agregar_lugar">Añadir Lugar</string>
+    <string name="confirmar_eliminar">¿Estás seguro de que quieres eliminar "%1$s"?</string>
+    <string name="seleccionar_idioma">Seleccionar idioma</string>
+    <string name="idioma_es">Español</string>
+    <string name="idioma_en">English</string>
+    <string name="agregar_Lugar">Agregar Lugar</string>
+    <string name="nuevo_lugar">Nuevo Lugar</string>
+    <string name="se_ha_agregado">Se ha agregado: </string>
+    <string name="abrir_app">Abre la app para más detalles</string>
+    <string name="app_iniciada_correctamente">La app se ha iniciado correctamente</string>
+    <string name="idioma_cambiado">El idioma ha sido cambiado correctamente</string>
+    <string name="text_nombre_lugar">Nombre del Lugar</string>
+    <string name="text_descripcion_lugar">Descripción del Lugar</string>
+    <string name="text_distancia">Distancia: --</string>
+    <string name="mapa_descripcion">Mapa mostrando la ubicación del lugar</string>
+    <string name="abrir_mapa">Abrir en Google Maps</string>
+    <string name="compartir_ubicacion">Compartir Ubicación</string>
+    <string name="ubicacion_no_disponible">Ubicación no disponible</string>
+    <string name="google_maps_no_instalado">Google Maps no está instalado</string>
+    <string name="compartir_mensaje">Mira este lugar: %1$s\nUbicación: %2$s</string>
+    <string name="compartir_con">Compartir ubicación con</string>
+    <string name="error_ubicacion_no_disponible">Error: la ubicación no está disponible</string>
+    <!-- Diálogos -->
+    <string name="dialog_editar_titulo">Editar Lugar</string>
+    <string name="dialog_editar_mensaje">Introduce el nuevo nombre y descripción para "%1$s".</string>
+    <string name="dialog_eliminar_titulo">Eliminar Lugar</string>
+    <string name="dialog_eliminar_mensaje">¿Estás seguro de que deseas eliminar "%1$s"? Esta acción no se puede deshacer.</string>
+    <string name="error_api_geocoding">Error en la API de Geocoding</string>
+    <string name="mensaje_error_api">No se pudieron obtener las coordenadas del lugar. Verifica tu conexión a Internet o intenta más tarde.</string>
+    <string name="error_nombre_lugar_invalido">Error: Nombre del lugar inválido</string>
+    <string name="error_conexion">No se pudo conectar a Internet. Verifica tu conexión y vuelve a intentarlo.</string>
+    <string name="error_ubicacion_no_encontrada">No se encontraron coordenadas para "%1$s"</string>
+    <string name="error_codigo">Código de error: </string>
+    <string name="acerca_de">Acerca de la app</string>
+    <string name="mensaje_acerca_de">Bienvenido a la app en la que podras explorar los diferentes lugares de interes que atraigan tu atención y compartir la ubicación con tus amigos.</string>
+    <string name="exportar_datos">Exportar Lugares</string>
+    <string name="exportacion_exitosa">Datos exportados en: </string>
+    <string name="error_exportar">Error al exportar datos</string>
+    <string name="menu_inicio">Inicio</string>
+    <string name="abrir_menu">Abrir menú</string>
+    <string name="cerrar_menu">Cerrar menú</string>
+    <string name="modo_oscuro">Modo oscuro</string>
+
+</resources>

@@ -1,0 +1,36 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.AitorDAS1" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryVariant">@color/colorPrimaryVariant</item>
+        <item name="colorSecondary">@color/colorSecondary</item>
+        <item name="android:colorBackground">@color/colorBackground</item>
+        <item name="android:textColorPrimary">@color/colorTextPrimary</item>
+        <item name="android:textColorSecondary">@color/colorTextSecondary</item>
+        <item name="android:buttonStyle">@style/CustomButton</item>
+        <item name="android:toolbarStyle">@style/CustomToolbar</item>
+    </style>
+
+    <!-- Tema oscuro -->
+    <style name="Base.Theme.AitorDAS1.Dark" parent="Theme.Material3.Dark.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryVariant">@color/colorPrimaryVariant</item>
+        <item name="colorSecondary">@color/colorSecondary</item>
+        <item name="android:colorBackground">#121212</item>
+        <item name="android:textColorPrimary">#FFFFFF</item>
+        <item name="android:textColorSecondary">#B3B3B3</item>
+        <item name="android:buttonStyle">@style/CustomButton</item>
+        <item name="android:toolbarStyle">@style/CustomToolbar</item>
+    </style>
+
+    <!-- Estilo para la barra de herramientas -->
+    <style name="CustomToolbar" parent="ThemeOverlay.MaterialComponents.Toolbar.Primary">
+        <item name="android:background">@color/toolbarColor</item> <!-- Color de fondo -->
+        <item name="android:textColorPrimary">#FFFFFF</item> <!-- Color del título -->
+        <item name="android:elevation">8dp</item> <!-- Sombra -->
+        <item name="android:popupTheme">@style/ThemeOverlay.MaterialComponents.Light</item>
+    </style>
+
+    <style name="Theme.AitorDAS1" parent="Base.Theme.AitorDAS1" />
+    <style name="Theme.AitorDAS1.Dark" parent="Base.Theme.AitorDAS1.Dark" />
+</resources>
