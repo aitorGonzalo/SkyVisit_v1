@@ -119,10 +119,10 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         // 🔹 Cargar lugares desde la base de datos
-        // En el método onCreate() después de abrir dbManager
+        
         List<Lugar> lugares = dbManager.obtenerTodosLosLugares();
 
-        // Añadir lugares con coordenadas (ejemplo de coordenadas aproximadas reales)
+        // Añadir lugares con coordenadas 
         if (!existeLugar("Estadio San Mames", lugares)) {
             dbManager.insertarLugar("Estadio San Mames", "Estadio del equipo Athletic Club de Bilbao", 43.2642, -2.9494);
         }
@@ -230,7 +230,7 @@ public class MainActivity extends AppCompatActivity {
         } else if (id == R.id.menu_acerca) {
             mostrarAcercaDe();
             return true;
-        } else if (id == R.id.menu_exportar) { // 🔹 Se agregaron llaves para evitar errores de flujo
+        } else if (id == R.id.menu_exportar) { 
             seleccionarUbicacionYGuardar();
             return true;
         } else {
@@ -241,8 +241,8 @@ public class MainActivity extends AppCompatActivity {
 
     private void mostrarAcercaDe() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle(R.string.acerca_de); // Título desde recursos
-        builder.setMessage(R.string.mensaje_acerca_de); // Mensaje desde recursos
+        builder.setTitle(R.string.acerca_de); 
+        builder.setMessage(R.string.mensaje_acerca_de); 
         builder.setPositiveButton("OK", (dialog, which) -> dialog.dismiss());
         builder.show();
     }
@@ -331,7 +331,7 @@ public class MainActivity extends AppCompatActivity {
         if (toolbar != null) {
             toolbar.post(() -> {
                 ViewGroup.MarginLayoutParams params = (ViewGroup.MarginLayoutParams) toolbar.getLayoutParams();
-                params.topMargin = 20; // Ajusta este valor si lo necesitas
+                params.topMargin = 20; 
                 toolbar.setLayoutParams(params);
                 toolbar.requestLayout();
                 toolbar.invalidate();
@@ -371,7 +371,7 @@ public class MainActivity extends AppCompatActivity {
         inputDescripcion.setHint(getString(R.string.descripcion_lugar));
         inputDescripcion.setInputType(InputType.TYPE_CLASS_TEXT);
 
-        // Nuevos campos para latitud y longitud
+        
         final EditText inputLatitud = new EditText(this);
         inputLatitud.setHint("Latitud (ej: 43.2630)");
         inputLatitud.setInputType(InputType.TYPE_NUMBER_FLAG_DECIMAL | InputType.TYPE_CLASS_NUMBER);
@@ -385,8 +385,8 @@ public class MainActivity extends AppCompatActivity {
         layout.setPadding(50, 20, 50, 20);
         layout.addView(inputNombre);
         layout.addView(inputDescripcion);
-        layout.addView(inputLatitud);  // nuevo campo latitud
-        layout.addView(inputLongitud); // nuevo campo longitud
+        layout.addView(inputLatitud);  
+        layout.addView(inputLongitud); 
 
         builder.setView(layout);
 
