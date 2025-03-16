@@ -282,11 +282,12 @@ public class MainActivity extends AppCompatActivity {
             OutputStream outputStream = getContentResolver().openOutputStream(uri);
             outputStream.write(contenido.toString().getBytes());
             outputStream.close();
-            Toast.makeText(this, "Archivo guardado correctamente", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, getString(R.string.archivo_guardado), Toast.LENGTH_LONG).show();
         } catch (IOException e) {
             e.printStackTrace();
-            Toast.makeText(this, "Error al guardar archivo", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, getString(R.string.error_guardar_archivo), Toast.LENGTH_SHORT).show();
         }
+
     }
 
 
