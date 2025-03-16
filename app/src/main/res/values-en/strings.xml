@@ -48,6 +48,8 @@
     <string name="abrir_menu">Open menu</string>
     <string name="cerrar_menu">Close menu</string>
     <string name="modo_oscuro">Dark Mode</string>
+    <string name="archivo_guardado">File saved successfully</string>
+    <string name="error_guardar_archivo">Error saving file</string>
 
 
 </resources>
