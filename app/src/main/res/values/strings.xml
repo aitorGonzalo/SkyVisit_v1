@@ -48,5 +48,7 @@
     <string name="abrir_menu">Abrir menú</string>
     <string name="cerrar_menu">Cerrar menú</string>
     <string name="modo_oscuro">Modo oscuro</string>
+    <string name="archivo_guardado">Archivo guardado correctamente</string>
+    <string name="error_guardar_archivo">Error al guardar archivo</string>
 
 </resources>
