@@ -6,14 +6,16 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 public class LugarDBHelper extends SQLiteOpenHelper {
     private static final String DATABASE_NAME = "lugares.db";
-    private static final int DATABASE_VERSION = 1;
+    private static final int DATABASE_VERSION = 2;
 
     // Sentencia SQL para crear la tabla
     private static final String CREATE_TABLE_LUGARES =
             "CREATE TABLE lugares (" +
                     "id INTEGER PRIMARY KEY AUTOINCREMENT, " +
                     "nombre TEXT NOT NULL, " +
-                    "descripcion TEXT NOT NULL)";
+                    "descripcion TEXT NOT NULL, " +
+                    "latitud REAL NOT NULL, " +
+                    "longitud REAL NOT NULL)";
 
     public LugarDBHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);

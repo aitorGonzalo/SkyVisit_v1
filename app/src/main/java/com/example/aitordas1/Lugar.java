@@ -1,16 +1,26 @@
 package com.example.aitordas1;
 
 public class Lugar {
+    private int id;
     private String nombre;
     private String descripcion;
-    private int id;
+    private double latitud;
+    private double longitud;
 
-    public Lugar(int id, String nombre, String descripcion) {
+    // Constructor completo
+    public Lugar(int id, String nombre, String descripcion, double latitud, double longitud) {
         this.id = id;
         this.nombre = nombre;
         this.descripcion = descripcion;
+        this.latitud = latitud;
+        this.longitud = longitud;
     }
 
+    // Getters y setters nuevos
+    public double getLatitud() { return latitud; }
+    public void setLatitud(double latitud) { this.latitud = latitud; }
+    public double getLongitud() { return longitud; }
+    public void setLongitud(double longitud) { this.longitud = longitud; }
     public String getNombre() {
         return nombre;
     }

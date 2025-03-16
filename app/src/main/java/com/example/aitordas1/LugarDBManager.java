@@ -33,10 +33,12 @@ public class LugarDBManager {
     }
 
 
-    public void insertarLugar(String nombre, String descripcion) {
+    public void insertarLugar(String nombre, String descripcion, double latitud, double longitud) {
         ContentValues values = new ContentValues();
         values.put("nombre", nombre);
         values.put("descripcion", descripcion);
+        values.put("latitud", latitud);
+        values.put("longitud", longitud);
         db.insert("lugares", null, values);
     }
 
@@ -51,17 +53,23 @@ public class LugarDBManager {
             int id = cursor.getInt(0);
             String nombre = cursor.getString(1);
             String descripcion = cursor.getString(2);
-            lista.add(new Lugar(id, nombre, descripcion));
+            double latitud = cursor.getDouble(3);
+            double longitud = cursor.getDouble(4);
+            lista.add(new Lugar(id, nombre, descripcion, latitud, longitud));
         }
         cursor.close();
         return lista;
     }
-    public void actualizarLugar(int id, String nuevoNombre, String nuevaDescripcion) {
+
+    public void actualizarLugar(int id, String nuevoNombre, String nuevaDescripcion, double nuevaLatitud, double nuevaLongitud) {
         ContentValues values = new ContentValues();
         values.put("nombre", nuevoNombre);
         values.put("descripcion", nuevaDescripcion);
+        values.put("latitud", nuevaLatitud);
+        values.put("longitud", nuevaLongitud);
         db.update("lugares", values, "id=?", new String[]{String.valueOf(id)});
     }
+
 
 }
 

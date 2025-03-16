@@ -48,6 +48,12 @@
     <string name="abrir_menu">Open menu</string>
     <string name="cerrar_menu">Close menu</string>
     <string name="modo_oscuro">Dark Mode</string>
+    <string name="archivo_guardado">File saved successfully</string>
+    <string name="error_guardar_archivo">Error saving file</string>
+    <string name="latitud_hint">Latitude (e.g., 43.2630)</string>
+    <string name="longitud_hint">Longitude (e.g., -2.9350)</string>
+    <string name="error_campos_incompletos">Please complete all fields</string>
+    <string name="error_lat_lon_invalidas">Invalid latitude/longitude</string>
 
 
 </resources>

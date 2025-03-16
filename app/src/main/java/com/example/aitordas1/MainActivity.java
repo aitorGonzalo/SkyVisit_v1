@@ -66,9 +66,8 @@ public class MainActivity extends AppCompatActivity {
     private static final String PREFS_NAME = "AppPrefs";
     private static final String KEY_LANGUAGE = "language";
     private static final int REQUEST_CODE_SAVE_FILE = 123; // Código para identificar la acción
-    private DrawerLayout drawerLayout;
-    private NavigationView navigationView;
-    private ActionBarDrawerToggle toggle;
+
+
 
 
     @Override
@@ -120,25 +119,28 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         // 🔹 Cargar lugares desde la base de datos
+        // En el método onCreate() después de abrir dbManager
         List<Lugar> lugares = dbManager.obtenerTodosLosLugares();
-        // Comprobar e insertar lugares por defecto si no existen
+
+        // Añadir lugares con coordenadas (ejemplo de coordenadas aproximadas reales)
         if (!existeLugar("Estadio San Mames", lugares)) {
-            dbManager.insertarLugar("Estadio San Mames", "Estadio del equipo Athletic Club de Bilbao");
+            dbManager.insertarLugar("Estadio San Mames", "Estadio del equipo Athletic Club de Bilbao", 43.2642, -2.9494);
         }
         if (!existeLugar("Gran Vía Bilbao", lugares)) {
-            dbManager.insertarLugar("Gran Vía Bilbao", "Gran Vía - Avenidas de compras y ocio");
+            dbManager.insertarLugar("Gran Vía Bilbao", "Gran Vía - Avenidas de compras y ocio", 43.2619, -2.9340);
         }
         if (!existeLugar("Puente de Bizkaia", lugares)) {
-            dbManager.insertarLugar("Puente de Bizkaia", "El conocido puente colgante");
+            dbManager.insertarLugar("Puente de Bizkaia", "El conocido puente colgante", 43.3230, -3.0174);
         }
         if (!existeLugar("Teatro Arriaga", lugares)) {
-            dbManager.insertarLugar("Teatro Arriaga", "Es la  joya de las artes escénicas de Bilbao");
+            dbManager.insertarLugar("Teatro Arriaga", "Es la joya de las artes escénicas de Bilbao", 43.2594, -2.9245);
         }
 
-        // Refrescar la lista después de la inserción
+        // Refrescar lista después de insertar
         lugares = dbManager.obtenerTodosLosLugares();
         adapter = new LugarAdapter(this, lugares);
         recyclerView.setAdapter(adapter);
+
 
         // 🔹 Botón para agregar un nuevo lugar
         FloatingActionButton fabAgregar = findViewById(R.id.fabAgregar);
@@ -282,11 +284,12 @@ public class MainActivity extends AppCompatActivity {
             OutputStream outputStream = getContentResolver().openOutputStream(uri);
             outputStream.write(contenido.toString().getBytes());
             outputStream.close();
-            Toast.makeText(this, "Archivo guardado correctamente", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, getString(R.string.archivo_guardado), Toast.LENGTH_LONG).show();
         } catch (IOException e) {
             e.printStackTrace();
-            Toast.makeText(this, "Error al guardar archivo", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, getString(R.string.error_guardar_archivo), Toast.LENGTH_SHORT).show();
         }
+
     }
 
 
@@ -368,40 +371,45 @@ public class MainActivity extends AppCompatActivity {
         inputDescripcion.setHint(getString(R.string.descripcion_lugar));
         inputDescripcion.setInputType(InputType.TYPE_CLASS_TEXT);
 
+        // Nuevos campos para latitud y longitud
+        final EditText inputLatitud = new EditText(this);
+        inputLatitud.setHint("Latitud (ej: 43.2630)");
+        inputLatitud.setInputType(InputType.TYPE_NUMBER_FLAG_DECIMAL | InputType.TYPE_CLASS_NUMBER);
+
+        final EditText inputLongitud = new EditText(this);
+        inputLongitud.setHint("Longitud (ej: -2.9350)");
+        inputLongitud.setInputType(InputType.TYPE_NUMBER_FLAG_DECIMAL | InputType.TYPE_CLASS_NUMBER);
+
         LinearLayout layout = new LinearLayout(this);
         layout.setOrientation(LinearLayout.VERTICAL);
         layout.setPadding(50, 20, 50, 20);
         layout.addView(inputNombre);
         layout.addView(inputDescripcion);
+        layout.addView(inputLatitud);  // nuevo campo latitud
+        layout.addView(inputLongitud); // nuevo campo longitud
 
         builder.setView(layout);
 
         builder.setPositiveButton(getString(R.string.guardar), (dialog, which) -> {
             String nombre = inputNombre.getText().toString().trim();
             String descripcion = inputDescripcion.getText().toString().trim();
+            String latitudStr = inputLatitud.getText().toString().trim();
+            String longitudStr = inputLongitud.getText().toString().trim();
 
-            if (!nombre.isEmpty() && !descripcion.isEmpty()) {
-                // Verificar que la base de datos está abierta
-                if (dbManager == null) {
-                    dbManager = new LugarDBManager(this);
-                    dbManager.abrir();
-                }
-
+            if (!nombre.isEmpty() && !descripcion.isEmpty() && !latitudStr.isEmpty() && !longitudStr.isEmpty()) {
                 try {
-                    dbManager.insertarLugar(nombre, descripcion);
+                    double latitud = Double.parseDouble(latitudStr);
+                    double longitud = Double.parseDouble(longitudStr);
+
+                    dbManager.insertarLugar(nombre, descripcion, latitud, longitud);
                     actualizarListaLugares();
 
-                    // Verificar que el nombre no esté vacío antes de enviar la notificación
-                    if (!nombre.isEmpty()) {
-                        mostrarNotificacion(nombre);
-                    } else {
-                        Log.e("NOTIFICACION_ERROR", "Intento de notificación con nombre vacío");
-                    }
-
-                } catch (Exception e) {
-                    Log.e("DB_ERROR", "Error al insertar lugar", e);
-                    Toast.makeText(this, "Error al guardar el lugar", Toast.LENGTH_SHORT).show();
+                    mostrarNotificacion(nombre);
+                } catch (NumberFormatException e) {
+                    Toast.makeText(this, "Latitud/Longitud inválidas", Toast.LENGTH_SHORT).show();
                 }
+            } else {
+                Toast.makeText(this, "Completa todos los campos", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -409,6 +417,9 @@ public class MainActivity extends AppCompatActivity {
 
         builder.show();
     }
+
+
+
 
 
     private void actualizarListaLugares() {
@@ -478,6 +489,7 @@ public class MainActivity extends AppCompatActivity {
         NotificationManagerCompat elManager = NotificationManagerCompat.from(this);
         elManager.notify(1, elBuilder.build());
     }
+
 
 
 }
