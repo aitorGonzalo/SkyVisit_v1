@@ -59,7 +59,7 @@ El usuario puede:
 📥 Clonar el repositorio
 
 git clone (https://github.com/aitorGonzalo/SkyVisit_v1)
-cd tu-repo
+
 
 🛠 Abrir en Android Studio
 
